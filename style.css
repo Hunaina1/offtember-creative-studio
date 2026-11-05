@@ -1,0 +1,90 @@
+/* OFFTEMBER CREATIVE STUDIO - shared styles. Change colours here once, every page updates. */
+:root{--blue:#1f93f2;--deep:#0f74e0;--sky:#46b8ff;--yellow:#ffd23f;--navy:#0a1630;--ink:#d9e2f0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:#fff;
+ font:500 17px/1.55 'Cabinet Grotesk',system-ui,sans-serif;
+ background:linear-gradient(180deg,var(--deep),var(--blue) 55%,var(--sky)) fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-size:44px 44px;
+ background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px)}
+header,main,footer{position:relative}
+main{flex:1}
+.wrap{width:min(1100px,100% - 48px);margin-inline:auto}
+a{color:inherit}
+h1,h2,h3{font-family:'Clash Display',system-ui,sans-serif;line-height:1.05;margin:0}
+h1{font-size:clamp(42px,8vw,96px);letter-spacing:-.03em}
+h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;margin-bottom:.5em}
+p{margin:0 0 1em;max-width:62ch}
+:is(a,button,input,textarea):focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 0}
+.logo{text-decoration:none;font:700 22px/1 'Clash Display',sans-serif;letter-spacing:.03em}
+.logo small{display:block;margin-top:5px;font:700 9px/1 'Cabinet Grotesk',sans-serif;letter-spacing:.36em;color:var(--yellow)}
+.top nav{display:flex;gap:26px}
+.top nav a{text-decoration:none;font-weight:700;color:#e6f3ff;padding:4px 0;border-bottom:2px solid transparent}
+.top nav a:hover,.top nav a[aria-current]{color:#fff;border-color:var(--yellow)}
+.btn{display:inline-block;padding:.7em 1.4em;border-radius:99px;background:var(--yellow);color:var(--navy);
+ font:600 16px 'Clash Display',sans-serif;text-decoration:none;border:2px solid var(--yellow)}
+.btn:hover{background:#fff;border-color:#fff}
+.btn.ghost{background:none;color:#fff;border-color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--navy)}
+.btn.sm{padding:.5em 1.1em;font-size:15px}
+
+/* sections */
+.sec{padding:56px 0}
+.hero{padding:64px 0 40px}
+.hero p{font-size:20px;margin:22px 0 28px;color:#eef7ff}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.note{font-weight:700;color:#d7ecff;margin:44px 0 18px}
+
+/* the signature shipping container */
+.box{--c:#e5322d;--k:#a91f1b;position:relative;display:block;padding:22px 22px 56px;border-radius:6px;
+ color:#fff;text-decoration:none;border:1px solid rgba(0,0,0,.3);
+ background:linear-gradient(180deg,rgba(255,255,255,.14),transparent 45%,rgba(0,0,0,.14)),
+ repeating-linear-gradient(90deg,rgba(255,255,255,.17) 0 4px,rgba(0,0,0,.17) 4px 8px),var(--c);
+ box-shadow:0 10px 0 var(--k),0 18px 30px rgba(8,60,140,.35);transition:transform .2s}
+a.box:hover{transform:translateY(-8px)}
+.box h3{font-size:clamp(24px,3vw,32px);text-transform:uppercase;text-shadow:0 2px 0 rgba(0,0,0,.18)}
+.box p{margin:.6em 0 0;font-weight:700}
+.box .tag{position:absolute;right:16px;bottom:14px;font-weight:800;letter-spacing:.2em;font-size:12px}
+.box.dark{color:var(--navy)}.box.dark h3{text-shadow:none}
+.red{--c:#e5322d;--k:#a91f1b}.orange{--c:#f26a1f;--k:#b84a10}.cobalt{--c:#1d55d8;--k:#123a9c}
+.amber{--c:#f6b919;--k:#c08a0a}.steel{--c:#97a1ad;--k:#6c7682}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stack .box:nth-child(1){transform:rotate(-2deg)}.stack .box:nth-child(2){transform:rotate(1.5deg)}
+.stack .box:nth-child(3){transform:rotate(-1deg)}.stack .box:nth-child(4){transform:rotate(2deg)}
+.stack a.box:hover{transform:translateY(-8px) rotate(0)}
+
+/* dark "inside the container" panels */
+.panel{background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 4px,rgba(0,0,0,.1) 4px 8px),var(--navy);
+ color:var(--ink);border-radius:8px;padding:32px}
+.panel h2,.panel h3{color:#fff}
+.panel ul{margin:0;padding-left:1.1em}.panel li{margin:.35em 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;list-style:none;padding:0!important;counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:block;font:600 40px 'Clash Display',sans-serif;color:var(--yellow)}
+.steps b{display:block;color:#fff;font-size:20px}
+
+/* services + work */
+.svc{display:grid;grid-template-columns:260px 1fr;gap:26px;margin-bottom:48px;align-items:start}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.grid3 .panel{margin-top:22px}
+
+/* contact form */
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:start}
+label{display:block;font-weight:700;margin:0 0 16px;color:#fff}
+input,textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;border-radius:8px;border:1px solid #3a5694;
+ background:#0d1d40;color:#fff;font:500 16px 'Cabinet Grotesk',sans-serif}
+textarea{min-height:140px;resize:vertical}
+button.btn{cursor:pointer}
+.mail{font:600 clamp(20px,3vw,28px) 'Clash Display',sans-serif;color:var(--yellow)}
+
+footer{padding:28px 0;color:#e6f3ff;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.35);padding-top:20px}
+
+@media(max-width:860px){
+ .stack{grid-template-columns:1fr 1fr}.steps,.grid3,.two,.svc{grid-template-columns:1fr}
+ .top nav{order:3;width:100%;justify-content:space-between;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
